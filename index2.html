@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/style.css" >
+</head>
+<body>
+	<header><h2>Botons cafeteria</h2></header>
+
+
+	<div id='main'>
+		<aside> 
+
+		<!--<p class="recibo" id="demo1">Producte</p>
+    		<p class="recibo" id="demo2">Preu</p>
+   		<p class="recibo" id="demo3">0</p>
+   		<p class="recibo" id="demo4">0</p>	-->
+<div class="recibo">
+   			<h2>Producte</h2>
+				<p id="demo1"></p>
+  				</div>	
+<div class="recibo">
+   			<h2>Cantidad</h2>
+				<p id="demo3"></p>
+  				</div>
+<div class="recibo">
+   			<h2>Preu</h2>
+				<p id="demo2"></p>
+  				</div>
+<div class="recibo">
+   			<h2>Total</h2>
+				<p id="demo4"></p>
+  				</div>
+		</aside>	
+		
+					<footer>
+		<p ><button class="boton" id="cafesolo" onclick="myproduct('Cafe1',10)">CAFE1</button></p>
+		<p ><button class="boton" id="americano" onclick="myproduct('Cafe2',5)">CAFE2</button></p>
+		<p ><button class="boton" id="conleche" onclick="myproduct('Cafe3',3.5)">CAFE3</button></p>
+
+		</footer>
+		
+		<article>    
+
+				
+
+		
+				<a><button class="button" onclick="myquantity(1)">1</button></a>			
+				<a><button class="button" onclick="myquantity(2)">2</button></a>
+				<a><button class="button" onclick="myquantity(3)">3</button></a>
+				<a><button class="button" onclick="myquantity(4)">4</button></a>
+				<a><button class="button" onclick="myquantity(5)">5</button></a>
+				<a><button class="button" onclick="myquantity(6)">6</button></a>
+				<a><button class="button" onclick="myquantity(7)">7</button></a>
+				<a><button class="button" onclick="myquantity(8)">8</button></a>
+				<a><button class="button" onclick="myquantity(9)">9</button></a>
+				<a><button class="button" onclick="myquantity(0)">0</button></a>
+				<a><button class="button" id="quantitat" >0</button></a>
+
+
+				<p><button class="button" onclick="myintro()">INTRO</button></p>
+				<p><button  class="button" onclick="borrar()">BORRAR</button></p>
+				<p><button  class="button" onclick="mytotal()">TOTAL</button></p>
+
+    	</article>
+	</div>
+
+<script>
+var producte= "";
+var preu=0;
+var quantitat=0;
+var total=0
+
+function myproduct(prod, pre){
+	producte= prod;
+    preu=pre;
+//document.getElementById('demo1').innerHTML=producte; 
+//document.getElementById('demo2').innerHTML=preu;
+}   
+function myquantity(cantidad){
+	quantitat=   document.getElementById('quantitat').innerHTML*10+cantidad;
+	
+ document.getElementById('quantitat').innerHTML=quantitat;
+}   
+function myintro(){
+	total=preu*quantitat;
+	document.getElementById('demo3').innerHTML+="<br>"+quantitat;
+	document.getElementById('demo1').innerHTML+="<br>"+producte; 
+    document.getElementById('demo4').innerHTML+="<br>"+total;
+    document.getElementById('demo2').innerHTML+="<br>"+preu;
+     document.getElementById('quantitat').innerHTML="0";
+}
+ function mytotal(){
+total=preu*quantitat;
+    document.getElementById('demo4').innerHTML=total;
+	//document.getElementById('demo3').innerHTML=quantitat;
+	//document.getElementById('demo1').innerHTML=producte; 
+    //document.getElementById('demo4').innerHTML=total;
+    //document.getElementById('demo2').innerHTML=preu;
+    // document.getElementById('quantitat').innerHTML="0";
+ }
+ 
+ function borrar(){
+	document.getElementById('demo3').innerHTML="";
+	document.getElementById('demo1').innerHTML="";
+    document.getElementById('demo4').innerHTML="";
+    document.getElementById('demo2').innerHTML="";
+}
+
+</script>
+
+</body>
+</html>
